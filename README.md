@@ -1,50 +1,118 @@
-# Welcome to your Expo app 👋
+# Multi-Language Expo App 🌐
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern Expo application with built-in internationalization (i18n) support, file-based routing, and a well-organized folder structure.
 
-## Get started
+## Features ✨
 
-1. Install dependencies
+-   🌍 Multi-language support (English & Farsi)
+-   🛣️ File-based routing with Expo Router
+-   📱 Cross-platform (iOS, Android, Web)
+-   🎨 Themed components
+-   📦 Well-organized folder structure
+-   🔄 Language switching functionality
 
-   ```bash
-   npm install
-   ```
+## Project Structure 📁
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+├── app/                    # Main application screens
+│   ├── (tabs)/            # Tab-based navigation screens
+│   ├── _layout.tsx        # Root layout configuration
+│   ├── home.tsx           # Home screen
+│   └── product.tsx        # Product screen
+├── components/            # Reusable components
+│   ├── ThemedText.tsx     # Themed text component
+│   └── ThemedView.tsx     # Themed view component
+├── locales/              # Translation files
+│   ├── en.json           # English translations
+│   └── fa.json           # Farsi translations
+├── providers/            # Context providers
+│   └── TranslationProvider.tsx  # i18n provider
+└── constants/            # App constants
+    └── Colors.ts         # Color definitions
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting Started 🚀
 
-## Learn more
+1. Install dependencies:
 
-To learn more about developing your project with Expo, look at the following resources:
+    ```bash
+    npm install
+    ```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+2. Start the development server:
 
-## Join the community
+    ```bash
+    npx expo start
+    ```
 
-Join our community of developers creating universal apps.
+3. Run on your preferred platform:
+    - Press `i` for iOS simulator
+    - Press `a` for Android emulator
+    - Press `w` for web browser
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Language Support 🌍
+
+The app currently supports:
+
+-   English (en)
+-   Farsi (fa)
+
+To add a new language:
+
+1. Create a new translation file in `locales/` (e.g., `es.json` for Spanish)
+2. Add the language to the `resources` object in `providers/TranslationProvider.tsx`
+3. Add a language switch button in your UI
+
+## Routing 🛣️
+
+This project uses Expo Router for file-based routing:
+
+-   `/` - Home screen
+-   `/product` - Product screen
+-   `/tabs/*` - Tab-based navigation screens
+
+## Theming 🎨
+
+The app includes themed components that automatically adapt to the system's light/dark mode:
+
+-   `ThemedText` - Text component with theme support
+-   `ThemedView` - View component with theme support
+
+## Development 🛠️
+
+### Adding New Screens
+
+1. Create a new file in the `app/` directory
+2. Export a default component
+3. The route will be automatically available based on the file name
+
+### Adding Translations
+
+1. Add new keys to both `en.json` and `fa.json`
+2. Use the `t()` function from `useTranslation` hook:
+    ```typescript
+    const { t } = useTranslation();
+    <Text>{t("your.translation.key")}</Text>;
+    ```
+
+## Dependencies 📦
+
+-   expo
+-   expo-router
+-   i18next
+-   react-i18next
+-   expo-localization
+-   react-native-reanimated
+-   @expo/vector-icons
+
+## Contributing 🤝
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
+
+## License 📄
+
+This project is licensed under the MIT License - see the LICENSE file for details.
