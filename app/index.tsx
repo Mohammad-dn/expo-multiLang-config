@@ -20,6 +20,12 @@ export default function Home() {
 			<Link href={"/home"}>
 				<Text>Go home</Text>
 			</Link>
+			<Link href={"/auth"}>
+				<Text>Go auth</Text>
+			</Link>
+			<Link href={"/item-details/asdasd"}>
+				<Text>Go details</Text>
+			</Link>
 			<Text>Device locale: {getLocales()[0].languageCode}</Text>
 		</View>
 	);
