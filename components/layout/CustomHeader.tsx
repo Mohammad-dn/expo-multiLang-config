@@ -1,9 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { HapticTab } from '../HapticTab';
 
 export default function CustomHeader({ title }: { title: string }) {
 	return (
 		<View style={styles.header}>
 			<Text style={styles.headerTitle}>{title}</Text>
+			<HapticTab onPress={() => {}}>
+				<Text>Test</Text>
+			</HapticTab>
 		</View>
 	);
 }

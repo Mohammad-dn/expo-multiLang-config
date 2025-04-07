@@ -1,27 +1,23 @@
-import { Stack } from 'expo-router';
-import CustomHeader from '../components/layout/CustomHeader';
+import Drawer from 'expo-router/drawer';
 import { TranslationProvider } from '../providers/TranslationProvider';
 export default function Layout() {
 	return (
 		<TranslationProvider>
-			<Stack
+			<Drawer
 				screenOptions={{
-					header: ({ route, options }: { route: any; options: any }) => (
-						<CustomHeader title={options.title || route.name} />
-					),
 					headerShown: true,
 				}}>
-				<Stack.Screen name='home' options={{ title: 'Home' }} />
-				<Stack.Screen name='product' options={{ title: 'Product' }} />
-				<Stack.Screen name='index' options={{ title: 'Home' }} />
-				<Stack.Screen name='auth/index' options={{ title: 'Auth' }} />
-				<Stack.Screen
+				<Drawer.Screen name='home' options={{ title: 'Home' }} />
+				<Drawer.Screen name='product' options={{ title: 'Product' }} />
+				<Drawer.Screen name='index' options={{ title: 'Home' }} />
+				<Drawer.Screen name='auth/index' options={{ title: 'Auth' }} />
+				<Drawer.Screen
 					name='item-details/[productId]'
 					options={{
 						title: 'Item Details',
 					}}
 				/>
-			</Stack>
+			</Drawer>
 		</TranslationProvider>
 	);
 }
