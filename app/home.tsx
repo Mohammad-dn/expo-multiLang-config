@@ -1,7 +1,7 @@
-import { router } from "expo-router";
-import { useTranslation } from "react-i18next";
-import { Button, View } from "react-native";
-import { ThemedText } from "../components/ThemedText";
+import { router } from 'expo-router';
+import { useTranslation } from 'react-i18next';
+import { Button, View } from 'react-native';
+import { ThemedText } from '../components/ThemedText';
 
 export default function Home() {
 	const { t, i18n } = useTranslation();
@@ -14,27 +14,23 @@ export default function Home() {
 		<View
 			style={{
 				flex: 1,
-				justifyContent: "center",
-				alignItems: "center",
+				justifyContent: 'center',
+				alignItems: 'center',
 				gap: 20,
-			}}
-		>
-			<ThemedText type="title">{t("welcome")}</ThemedText>
-			<Button
-				title={t("product")}
-				onPress={() => router.push("/product")}
-			/>
+			}}>
+			<ThemedText type='title'>{t('welcome')}</ThemedText>
+			<Button title={t('product')} onPress={() => router.push('/product')} />
 
-			<View style={{ flexDirection: "row", gap: 10 }}>
+			<View style={{ flexDirection: 'row', gap: 10 }}>
 				<Button
-					title="English"
-					onPress={() => changeLanguage("en")}
-					color={i18n.language === "en" ? "#0a7ea4" : undefined}
+					title='English'
+					onPress={() => changeLanguage('en')}
+					color={i18n.language === 'en' ? '#0a7ea4' : undefined}
 				/>
 				<Button
-					title="فارسی"
-					onPress={() => changeLanguage("fa")}
-					color={i18n.language === "fa" ? "#0a7ea4" : undefined}
+					title='فارسی'
+					onPress={() => changeLanguage('fa')}
+					color={i18n.language === 'fa' ? '#0a7ea4' : undefined}
 				/>
 			</View>
 		</View>
