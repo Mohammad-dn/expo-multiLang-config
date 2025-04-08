@@ -28,7 +28,7 @@ export interface ApiResponse<T> {
 	success?: boolean;
 }
 
-interface ApiError {
+export interface ApiError {
 	message: string;
 	status: number;
 	code?: string;
