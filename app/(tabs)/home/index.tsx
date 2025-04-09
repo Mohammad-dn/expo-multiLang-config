@@ -1,5 +1,10 @@
-import { Text } from 'react-native';
+import { DialogDemo } from "@/components/ui/Dialog";
+import { Text } from "react-native";
 
 export default function Home() {
-	return <Text>Home</Text>;
+  return (
+    <Text>
+      <DialogDemo />
+    </Text>
+  );
 }
